@@ -1,0 +1,35 @@
+Description: version the library
+ Upstream use static linking. But make it a shared library with a version.
+Author: Laszlo Boszormenyi (GCS) <gcs@debian.org>
+Forwarded: not-needed
+Last-Update: 2026-06-21
+
+---
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -11,6 +11,9 @@ option (utf8_range_ENABLE_INSTALL "Confi
+ 
+ ##
+ # Create the lightweight C library
++set(SOVERSION 0)
++set(VERSION 0.0.0)
++
+ add_library (utf8_range
+   utf8_range.c
+ )
+@@ -20,11 +23,13 @@ add_library (utf8_range
+ add_library (utf8_validity utf8_range.c)
+ 
+ set_target_properties(utf8_range PROPERTIES
+-  VERSION ${protobuf_VERSION}
++  SOVERSION ${SOVERSION}
++  VERSION ${SOVERSION}
+   OUTPUT_NAME ${LIB_PREFIX}utf8_range
+ )
+ set_target_properties(utf8_validity PROPERTIES
+-  VERSION ${protobuf_VERSION}
++  SOVERSION ${SOVERSION}
++  VERSION ${SOVERSION}
+   OUTPUT_NAME ${LIB_PREFIX}utf8_validity
+ )
+ 

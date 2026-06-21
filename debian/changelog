@@ -1,0 +1,5 @@
+utf8-range (0.0.0~git260619-1) experimental; urgency=medium
+
+  * Initial release (closes: #1140496).
+
+ -- Laszlo Boszormenyi (GCS) <gcs@debian.org>  Sun, 21 Jun 2026 09:38:08 +0200

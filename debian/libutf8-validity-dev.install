@@ -1,0 +1,3 @@
+usr/lib/${DEB_HOST_MULTIARCH}/libutf8_validity.a
+usr/lib/${DEB_HOST_MULTIARCH}/libutf8_validity.so
+usr/include/utf8_validity.h

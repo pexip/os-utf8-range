@@ -1,0 +1,53 @@
+Source: utf8-range
+Section: devel
+Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.org>
+Build-Depends: debhelper-compat (= 13), cmake, pkgconf, libabsl-dev,
+ libgtest-dev <!nocheck>, libgmock-dev <!nocheck>
+Homepage: https://github.com/protocolbuffers/protobuf/tree/main/third_party/utf8_range
+Standards-Version: 4.7.4
+
+Package: libutf8-range0
+Architecture: any
+Multi-Arch: same
+Section: libs
+Depends: libutf8-validity0 (= ${binary:Version}), ${misc:Depends}
+Description: fast UTF-8 validation with Range algorithm
+ This is a wrapper for the Google range algorithm which checks whether a
+ sequence of bytes is a valid UTF-8 sequence and finds the longest valid
+ prefix of the UTF-8 sequence.
+
+Package: libutf8-range-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: ${misc:Depends}, libutf8-range0 (= ${binary:Version}), libutf8-validity-dev
+Description: fast UTF-8 validation with Range algorithm (development files)
+ This is a wrapper for the Google range-sse.cc algorithm which checks whether
+ a sequence of bytes is a valid UTF-8 sequence and finds the longest valid
+ prefix of the UTF-8 sequence.
+ .
+ This package provides development headers needed for applications that use
+ libutf8-range0.
+
+Package: libutf8-validity0
+Architecture: any
+Multi-Arch: same
+Section: libs
+Depends: ${misc:Depends}
+Description: validate UTF-8 strings at high speeds
+ Most strings online are in unicode using the UTF-8 encoding. Validating
+ strings quickly before accepting them is important.
+ This is an algorithm to leverage SIMD for fast UTF-8 string validation.
+
+Package: libutf8-validity-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: ${misc:Depends}, libutf8-validity0 (= ${binary:Version})
+Description: validate UTF-8 strings at high speeds (development files)
+ Most strings online are in unicode using the UTF-8 encoding. Validating
+ strings quickly before accepting them is important.
+ This is an algorithm to leverage SIMD for fast UTF-8 string validation.
+ .
+ This package provides development headers needed for applications that use
+ libutf8-validity0.

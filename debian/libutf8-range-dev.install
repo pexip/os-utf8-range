@@ -1,0 +1,5 @@
+usr/lib/${DEB_HOST_MULTIARCH}/libutf8_range.a
+usr/lib/${DEB_HOST_MULTIARCH}/libutf8_range.so
+usr/lib/${DEB_HOST_MULTIARCH}/pkgconfig/utf8_range.pc
+usr/lib/${DEB_HOST_MULTIARCH}/cmake/utf8_range/*
+usr/include/utf8_range.h

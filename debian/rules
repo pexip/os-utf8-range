@@ -1,0 +1,38 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+include /usr/share/dpkg/architecture.mk
+include /usr/share/dpkg/buildtools.mk
+
+%:
+	dh $@ --buildsystem=cmake
+
+override_dh_clean:
+	$(RM) -rv $(CURDIR)/build-static/ $(CURDIR)/build-shared/
+	dh_clean
+
+override_dh_auto_configure:
+	dh_auto_configure --builddir=build-static/ -- -DBUILD_SHARED_LIBS=OFF -Dutf8_range_ENABLE_TESTS=ON
+	dh_auto_configure --builddir=build-shared/ -- -DBUILD_SHARED_LIBS=ON  -Dutf8_range_ENABLE_TESTS=ON
+
+override_dh_auto_build-arch:
+	dh_auto_build --arch --builddir=build-static
+	dh_auto_build --arch --builddir=build-shared
+
+override_dh_auto_build-indep:
+	dh_auto_install --builddir=build-shared/ --indep
+
+override_dh_auto_test-arch:
+	dh_auto_test --builddir=build-shared/ --arch
+
+override_dh_auto_install-arch:
+	dh_auto_install --builddir=build-static/ --arch
+	dh_auto_install --builddir=build-shared/ --arch
+
+.PHONY: override_dh_clean override_dh_auto_configure \
+	override_dh_auto_build-arch override_dh_auto_build-indep \
+	override_dh_auto_test-arch \
+	override_dh_auto_install-arch

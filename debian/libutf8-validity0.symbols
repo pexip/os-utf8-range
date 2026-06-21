@@ -1,0 +1,3 @@
+libutf8_validity.so.0 libutf8-validity0 #MINVER#
+ utf8_range_IsValid@Base 0.0.0~git240418
+ utf8_range_ValidPrefix@Base 0.0.0~git240418

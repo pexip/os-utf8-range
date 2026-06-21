@@ -1,0 +1,2 @@
+# standalone lib, doesn't call others
+shared-library-lacks-prerequisites [usr/lib/*/libutf8_validity.so.0]

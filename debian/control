@@ -1,10 +1,12 @@
 Source: utf8-range
 Section: devel
-Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.org>
+Maintainer: Pexip AS <packaging@pexip.com>
+XSBC-Pexip-Original-Maintainer: Laszlo Boszormenyi (GCS) <gcs@debian.org>
 Build-Depends: debhelper-compat (= 13), cmake, pkgconf, libabsl-dev,
  libgtest-dev <!nocheck>, libgmock-dev <!nocheck>
 Homepage: https://github.com/protocolbuffers/protobuf/tree/main/third_party/utf8_range
 Standards-Version: 4.7.4
+XS-Pexip-Upstream: http://deb.debian.org/debian/ experimental
 
 Package: libutf8-range0
 Architecture: any

@@ -1,3 +1,9 @@
+utf8-range (0.0.0~git260619-1+pexip25u3) pexip-trixie; urgency=medium
+
+  * Fix R/C to include a tilde to allow for RC versions of protobuf.
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Mon, 03 Aug 2026 14:00:29 +0100
+
 utf8-range (0.0.0~git260619-1+pexip25u2) pexip-trixie; urgency=medium
 
   * Replace/Conflict older libprotobuf-dev packages as we used to

@@ -1,3 +1,10 @@
+utf8-range (0.0.0~git260619-1+pexip25u2) pexip-trixie; urgency=medium
+
+  * Replace/Conflict older libprotobuf-dev packages as we used to
+    ship the UTF8-range headers in those.
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Mon, 03 Aug 2026 13:50:39 +0100
+
 utf8-range (0.0.0~git260619-1+pexip25u1) pexip-trixie; urgency=medium
 
   * Prepare Pexip packaging
